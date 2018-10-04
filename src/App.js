@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import YTSearch from "youtube-api-search";
-//make a compoenent that searches YTsearch and saves it to the state, then display the first video
+
+//From current directory (./) go into components folder, find file search_bar
+import SearchBar from "./components/search_bar";
+import VideoList from "./components/video_list";
+import VideoDetail from "./components/video_detail";
+
 const API_KEY = "AIzaSyDyaBH5-6yUGGEdZgP44fQYDyjUEabUTBk";
 
+// Create a new component. This component should produce some HTML.
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -13,17 +20,21 @@ export default class App extends Component {
     };
 
     YTSearch({ key: API_KEY, term: "surfboard" }, videos => {
-      this.setState({ 
+      this.setState({
         videos: videos,
-        selectedVideo: videos[0] 
+        selectedVideo: videos[0]
     });
-      
+
     });
   }
   render() {
     return (
       <div>
-        <h1>Hello</h1>
+        <SearchBar />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+        videos={this.state.videos} />
       </div>
     );
   }
