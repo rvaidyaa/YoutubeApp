@@ -5,6 +5,7 @@ import './App.css'
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
+import Header from "./components/header";
 
 const API_KEY = "AIzaSyDyaBH5-6yUGGEdZgP44fQYDyjUEabUTBk";
 
@@ -30,6 +31,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <Header/>
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
