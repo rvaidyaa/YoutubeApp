@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import YTSearch from "youtube-api-search";
-
+import './App.css'
 //From current directory (./) go into components folder, find file search_bar
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
@@ -16,10 +15,11 @@ export default class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      term: ''
     };
 
-    YTSearch({ key: API_KEY, term: "surfboard" }, videos => {
+    YTSearch({ key: API_KEY, term: "mongoose" }, videos => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]

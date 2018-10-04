@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoListItem from './video_list_item';
-
+import './video_list.css'
 // export const Component = (props) => {
 //     return(
 //         <div>

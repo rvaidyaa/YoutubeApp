@@ -1,5 +1,6 @@
 //Needs to be in all components that contain JSX
 import React, { Component } from 'react';
+import './search_bar.css'
 
 //HTML for user to type in to
 //Define a new class (SearchBar) and give functionality of React.Component class
