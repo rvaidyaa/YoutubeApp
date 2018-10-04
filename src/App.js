@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import YTSearch from "youtube-api-search";
-import './App.css'
+import "./App.css";
 //From current directory (./) go into components folder, find file search_bar
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
@@ -17,28 +17,32 @@ export default class App extends Component {
     this.state = {
       videos: [],
       selectedVideo: null,
-      term: ''
+      term: ""
     };
 
-    YTSearch({ key: API_KEY, term: "mongoose" }, videos => {
+    this.videoSearch('surfboards');
+  }
+
+  videoSearch(term){
+    YTSearch({ key: API_KEY, term: term }, videos => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
-    });
-
+      });
     });
   }
+
   render() {
     return (
       <div>
-        <Header/>
-        <SearchBar />
+        <Header />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
-        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-        videos={this.state.videos} />
+          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
 }
-
