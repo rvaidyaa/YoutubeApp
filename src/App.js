@@ -9,7 +9,7 @@ import VideoDetail from "./components/video_detail";
 import Header from "./components/header";
 
 const API_KEY = "AIzaSyDyaBH5-6yUGGEdZgP44fQYDyjUEabUTBk";
-
+//https://github.com/gitname/react-gh-pages  deploy
 // Create a new component. This component should produce some HTML.
 export default class App extends Component {
   constructor(props) {
