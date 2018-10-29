@@ -3,9 +3,13 @@ import './header.css'
 
 const Header = () => {
   return (
-    <div>
-      <h1 className='title'>Youtube Api Search</h1>
+    <nav>
+    <div class="nav-wrapper">
+      <span class="brand-logo center embed-responsive-item">Youtube Quick Search</span>
+      
     </div>
+    </nav>
+    
   )
 }
 

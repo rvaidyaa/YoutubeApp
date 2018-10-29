@@ -6,8 +6,27 @@
 }
 .video-detail p {
     text-align: center;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     width:50%;
     margin-left: auto;
     margin-right:auto;
 }
+
+/* <li onClick={() => onVideoSelect(video)} className="list-group-item">
+      <div class="col s12 m7">
+        <h6 class="card-title">{video.snippet.title}</h6>
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src={imageUrl} />
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>
+              {video.snippet.title}
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </li> */

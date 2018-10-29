@@ -7,6 +7,7 @@ import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
 import Header from "./components/header";
+import 'materialize-css/dist/css/materialize.css'
 
 const API_KEY = "AIzaSyDyaBH5-6yUGGEdZgP44fQYDyjUEabUTBk";
 //https://github.com/gitname/react-gh-pages  deploy
@@ -39,7 +40,7 @@ export default class App extends Component {
     }, 300);
 
     return (
-      <div>
+      <div className="container">
         <Header />
         <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
